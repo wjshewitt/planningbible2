@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 47 67% 97%; /* cream: #FEFCF2 */
+    --foreground: 28 10% 26%; /* brown: #544C43 */
+    --card: 47 67% 97%;
+    --card-foreground: 28 10% 26%;
+    --popover: 47 67% 97%;
+    --popover-foreground: 28 10% 26%;
+    --primary: 81 25% 51%; /* green: #8EA75F */
+    --primary-foreground: 47 67% 97%; /* cream on green */
+    --secondary: 85 27% 70%; /* green-light: #B9C99C */
+    --secondary-foreground: 28 10% 26%; /* brown on green-light */
+    --muted: 30 11% 80%; /* brown-lighter: #D2CCC6 */
+    --muted-foreground: 28 10% 45%;
+    --accent: 85 27% 85%; /* Lighter green-light for hover */
+    --accent-foreground: 28 10% 26%; /* brown on accent */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 11% 80%; /* brown-lighter */
+    --input: 47 67% 95%; /* Slightly darker cream for input bg */
+    --ring: 81 25% 51%; /* green */
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 28 10% 22%; /* Darker brown */
+    --foreground: 47 67% 97%; /* Cream */
+    --card: 28 10% 22%;
+    --card-foreground: 47 67% 97%;
+    --popover: 28 10% 22%;
+    --popover-foreground: 47 67% 97%;
+    --primary: 81 25% 61%; /* Brighter green for dark mode */
+    --primary-foreground: 28 10% 12%; /* Darkest brown on green */
+    --secondary: 80 29% 35%; /* green-dark */
+    --secondary-foreground: 47 67% 97%;
+    --muted: 28 10% 32%; /* brown */
+    --muted-foreground: 47 67% 87%;
+    --accent: 28 10% 32%;
+    --accent-foreground: 47 67% 97%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 28 10% 32%;
+    --input: 28 10% 32%;
+    --ring: 81 25% 61%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .w-px {
+    width: 2px;
+  }
+  .bg-foreground {
+    background-color: #544C43;
+  }
+  
+  /* Hide the default search input clear button */
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance:none;
+  }
+}
